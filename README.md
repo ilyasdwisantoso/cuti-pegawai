@@ -68,18 +68,26 @@ php artisan key:generate
 Edit konfigurasi database di file `.env`:
 
 ```env
-DB_DATABASE=cuti_pegawai
+DB_DATABASE=cuti_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 4. Migrasi Database
+### 4. Buat Database di phpMyAdmin
+
+1. Buka browser: http://localhost/phpmyadmin
+2. Klik tab **Database**
+3. Buat database baru dengan nama: `cuti_db`
+4. Kolasi: `utf8mb4_general_ci`
+5. Klik **Create**
+
+### 5. Migrasi dan Seeder
 
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
 
-### 5. Jalankan Server Lokal
+### 6. Jalankan Server Lokal
 
 ```bash
 php artisan serve
@@ -97,6 +105,8 @@ Akses melalui:
 | Admin | admin@cuti.com | admin123 |
 
 Silakan daftar akun sebagai pegawai melalui halaman **Register** di aplikasi.
+
+---
 
 ## ⚙️ Teknologi Digunakan
 
