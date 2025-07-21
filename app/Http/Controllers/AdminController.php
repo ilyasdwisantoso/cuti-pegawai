@@ -37,6 +37,7 @@ class AdminController extends Controller
             'tanggal_lahir' => $request->tanggal_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
             'password' => Hash::make($request->password),
+            'role' => 'admin',
         ]);
 
         return redirect()->route('admin.index')->with('success', 'Admin berhasil ditambahkan.');
